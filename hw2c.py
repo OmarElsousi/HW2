@@ -29,7 +29,7 @@ def GaussSeidel(Aaug, x, Niter=15):
         for i in range(n):
             sum_ax = sum(Aaug[i][j] * x[j] for j in range(n) if j != i)
             x[i] = (Aaug[i][-1] - sum_ax) / Aaug[i][i]
-    return x
+    return [round(val, 4) for val in x]  # Round each element to 4 decimal places
 
 def main():
     """
